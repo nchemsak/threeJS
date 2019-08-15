@@ -1,0 +1,329 @@
+////////////////////////////////// BUTTONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+a {
+    &.btn {
+        background-color: $pink;
+        color: #fff;
+        -webkit-box-shadow: 22px 22px 0px 0px rgba(240, 240, 240, 1);
+        -moz-box-shadow: 22px 22px 0px 0px rgba(240, 240, 240, 1);
+        box-shadow: 22px 22px 0px 0px rgba(240, 240, 240, 1);
+        border-radius: 0px;
+        font-size: 24px;
+        padding: 21px;
+
+        @include media-breakpoint-down(md) {
+            display: block;
+        }
+
+        @include media-breakpoint-up(md) {
+            width: 310px;
+        }
+    }
+}
+
+
+// BACK TO TOP button
+button.back-to-top {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff;
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+
+    color: transparent;
+    clear: both;
+    visibility: hidden;
+    position: fixed;
+    cursor: pointer;
+    display: block;
+    border: none; // right: 90px;
+    // bottom: 100px;
+    right: 50px;
+    bottom: 50px;
+    font-size: 0px;
+    outline: 0 !important;
+    z-index: 99;
+    transition: all .3s ease-in-out;
+
+    @include media-breakpoint-up(sm) {
+        right: 50px;
+        bottom: 50px;
+    }
+
+    @include media-breakpoint-up(md) {
+
+        right: 50px;
+        bottom: 50px;
+    }
+
+    @include media-breakpoint-up(lg) {
+
+        right: 90px;
+        bottom: 100px;
+    }
+}
+
+button.back-to-top:hover,
+button.back-to-top:active,
+button.back-to-top:focus,
+    {
+    outline: 0 !important;
+}
+
+button.back-to-top::before {
+    content: "\f077";
+    font-family: "Font Awesome 5 Free";
+    display: block;
+    vertical-align: middle;
+    font-weight: 900;
+    margin: -5px 0 auto;
+    transition: all .3s ease-in-out;
+
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    // display: none;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+button.back-to-top:hover::before {
+    margin-top: -20px;
+    text-shadow: 0px 8px 6px rgba(0, 0, 0, 0.4);
+}
+
+
+button.back-to-top.show {
+    display: block;
+    background: #fff;
+    background: transparent;
+    background: rgba(0, 0, 0, 0.5);
+    color: $pink;
+border: 1px solid #fff;
+border-radius: 5px;
+    font-size: 25px;
+    right: 60px;
+    bottom: 60px;
+    height: 60px;
+    width: 60px;
+    visibility: visible;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25); // @include xs-only {
+    right: 30px;
+    bottom: 30px;
+    height: 50px;
+    width: 50px; // }
+
+    @include media-breakpoint-up(md) {
+
+        right: 30px;
+        bottom: 30px;
+        height: 60px;
+        width: 60px;
+    }
+
+    @include media-breakpoint-up(lg) {
+
+        right: 60px;
+        bottom: 60px;
+    }
+}
+
+// button.back-to-top.show:hover {
+//     box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.5);
+//     -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.5);
+//     -moz-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.5);
+// }
+
+
+
+// waves effect on click
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+    .waves-ripple {
+        position: absolute;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-top: -50px;
+        margin-left: -50px;
+        opacity: 0;
+        background: rgba(0, 0, 0, 0.2);
+        background: -webkit-radial-gradient(rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+        background: -o-radial-gradient(rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+        background: -moz-radial-gradient(rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+        background: radial-gradient(rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+        -webkit-transition-property: -webkit-transform, opacity;
+        -moz-transition-property: -moz-transform, opacity;
+        -o-transition-property: -o-transform, opacity;
+        transition-property: transform, opacity;
+        -webkit-transform: scale(0) translate(0, 0);
+        -moz-transform: scale(0) translate(0, 0);
+        -ms-transform: scale(0) translate(0, 0);
+        -o-transform: scale(0) translate(0, 0);
+        transform: scale(0) translate(0, 0);
+        pointer-events: none;
+    }
+}
+
+
+.waves-effect.waves-light .waves-ripple {
+    background: rgba(255, 255, 255, 0.4);
+    background: -webkit-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+    background: -o-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+    background: -moz-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+    background: radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+}
+
+.waves-effect.waves-classic .waves-ripple {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.waves-effect.waves-classic.waves-light .waves-ripple {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.waves-notransition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+.waves-button,
+.waves-circle {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+
+.waves-button,
+.waves-button:hover,
+.waves-button:visited,
+.waves-button-input {
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 1em;
+    line-height: 1em;
+    text-align: center;
+    text-decoration: none;
+    z-index: 1;
+}
+
+.waves-button {
+    padding: 0.85em 1.1em;
+    border-radius: 0.2em;
+}
+
+.waves-button-input {
+    margin: 0;
+    padding: 0.85em 1.1em;
+}
+
+.waves-input-wrapper {
+    border-radius: 0.2em;
+    vertical-align: bottom;
+}
+
+.waves-input-wrapper.waves-button {
+    padding: 0;
+}
+
+.waves-input-wrapper .waves-button-input {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.waves-circle {
+    text-align: center;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    border-radius: 50%;
+}
+
+.waves-float {
+    -webkit-mask-image: none;
+    -webkit-box-shadow: 0px 1px 1.5px 1px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 1px 1.5px 1px rgba(0, 0, 0, 0.12);
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 0.5s;
+
+    &:hover {
+        -webkit-box-shadow: 0px 8px 20px 1px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 8px 20px 1px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
+.waves-block {
+    display: block;
+}
+
+
+
+
+
+#page-content-wrapper {
+
+    // Animated Navigation link arrows
+    a span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    a span:before {
+        font-family: FontAwesome;
+        content: '\f054';
+        position: absolute;
+        opacity: 0;
+        top: 8px;
+        left: -20px;
+        transition: 0.5s;
+        font-size: 14px;
+
+        -webkit-backface-visibility: hidden;
+    }
+
+    a:hover span {
+        padding-left: 25px;
+        -webkit-backface-visibility: hidden;
+    }
+
+    a:hover span:before {
+        opacity: 1;
+        left: 0;
+        -webkit-backface-visibility: hidden;
+    }
+}

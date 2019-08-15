@@ -1,0 +1,147 @@
+///////////////////// RESPONSIVE SIZES FOR REFERENCE  \\\\\\\\\\\\\\\\\\\\\\\\\
+// xs: 0
+// sm: 576px
+// md: 768px
+// lg: 992px
+// xl: 1200px
+// @include media-breakpoint-up(sm) {}
+// @include media-breakpoint-up(md) {}
+// @include media-breakpoint-up(lg) {}
+// @include media-breakpoint-up(xl) {}
+
+// fonts
+$nunito: nunito-sans,
+sans-serif;
+$trajan: trajan-pro-3,
+serif;
+$muli: muli,
+sans-serif;
+
+// font-weight
+$extralight: 200;
+$light: 300;
+$normal: 400;
+$semibold: 600;
+$bold: 700;
+
+//Colors
+$blue-dark: #3b5576;
+$pink: #cab8d0;
+$dark-pink: #998b9e;
+$light-grey: #e9ecef;
+
+//////////////////////////////// CUSTOM MIXINS  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+@mixin clearfix() {
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+
+///////////////////// IMPORT PREDEFINED BOOTSTRAP MIXINS  \\\\\\\\\\\\\\\\\\\\\\
+@import "../../lib/bootstrap/scss/functions";
+@import "../../lib/bootstrap/scss/variables";
+@import "../../lib/bootstrap/scss/mixins";
+/////////////////////// USER IMPORTS - OTHER SASS FILES  \\\\\\\\\\\\\\\\\\\\\\\
+@import "navbar";
+@import "homepage";
+@import "contentpages";
+@import "buttons";
+@import "footer";
+
+////////////////////////////// GENERAL STYLES  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+// By setting font-size to 62.5%, it makes it easier to declare all font-sizes
+// to REM.  The, if you need to scale up or down, it can be done on the HTML
+// declaration.
+//
+// EXAMPLES:
+//      16px = 1.6rem;
+//      21px = 2.1rem;
+html {
+    font-size: 62.5%;
+}
+
+// /////////////////////// Responsive Typography Trick /////////////////////////
+// This allows for "fluid typography" instead of having the font "jump" at
+// different screen sizes.
+//
+//https://css-tricks.com/books/volume-i/scale-typography-screen-size/
+//
+// body {
+//   font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+// }
+
+// For example, if we want the our font-size in a range where 14px is the minimum
+// size at the smallest viewport width of 300px and where 26px is the maximum size
+// at the largest viewport width of 1600px, then our equation looks like this:
+//
+// body {
+//   font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+// }
+
+// Apply the same equation to the line-height property to accomplish that goal:
+//
+//body {
+//   font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+//   line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+// }
+
+body {
+    font-family: $muli;
+    margin: 0;
+}
+
+// header {
+//     height: 56px;
+// }
+
+// text highlighting
+::selection {
+    background: $pink;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+
+// This flex wrapper class keeps footer at the bottom the page no matter how short the content is...prevents a "floating" footers
+.flex-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+// Fixes background image causing jittering on Internet Explorer on scroll
+/*Edge*/
+@supports (-ms-accelerator:true) {
+    html {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+        height: 100%;
+    }
+}
+
+/*Ie 10/11*/
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    html {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+        height: 100%;
+    }
+}

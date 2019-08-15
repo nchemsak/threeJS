@@ -1,0 +1,17 @@
+{
+
+  "navItems" : [
+    {
+      "menu_item" : "Index"
+    },
+    {
+      "menu_item" : "Page 1"
+    },
+    {
+      "menu_item" : "Page 2"
+    },
+     {
+      "menu_item" : "Page 3"
+    }
+  ]
+}
